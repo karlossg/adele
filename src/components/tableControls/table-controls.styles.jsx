@@ -6,7 +6,7 @@ const StyledTableControlsWrapper = styled.div`
   justify-content: flex-end;
   align-items: center;
   position: relative;
-  width: 500px;
+  min-width: 800px;
 `;
 
 const StyledMoveLabel = styled.span`

@@ -240,6 +240,14 @@ export const navLink = {
   colorActive: tokens.colors.blue,
 }
 
+export const statsLink = {
+  fontFamily: typography.fontFamily,
+  size: typography.mediumText,
+  weight: typography.regular,
+  color: tokens.colors.grayLight10,
+  colorActive: tokens.colors.blue,
+}
+
 export const footer = {
   fontFamily: typography.fontFamily,
   size: typography.smallText,
