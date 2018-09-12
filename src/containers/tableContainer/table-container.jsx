@@ -158,21 +158,21 @@ export default class TableContainer extends Component {
     });
 
     /* Fix for correct position of the header */
-      const fixedHeaderHeight =
+    const fixedHeaderHeight =
       document.getElementById('companyHeader').getBoundingClientRect().height + 3;
-      this.getFixedHeaderHeight(fixedHeaderHeight);
-      
-      const initialFiltersHeight = document
+    this.getFixedHeaderHeight(fixedHeaderHeight);
+
+    const initialFiltersHeight = document
       .getElementById('table-controls-wrapper')
       .getBoundingClientRect().height;
-      this.setInitialFiltersHeight(initialFiltersHeight);
-      
-      /* Saves height of all <td>'s to assure correct sizing of absolute table elements */
-      
-      this.setFixedCellsHeights(this.state.systemsCat);
-      this.setFixedCellsWidths(this.state.systemsCat);
-      
-      window.addEventListener('resize', this.refreshContainer);
+    this.setInitialFiltersHeight(initialFiltersHeight);
+
+    /* Saves height of all <td>'s to assure correct sizing of absolute table elements */
+
+    this.setFixedCellsHeights(this.state.systemsCat);
+    this.setFixedCellsWidths(this.state.systemsCat);
+
+    window.addEventListener('resize', this.refreshContainer);
   }
 
   componentDidUpdate() {
@@ -281,55 +281,55 @@ export default class TableContainer extends Component {
     if (!this.state.showStats) {
       const fixedCompanyHeader = document.getElementById('companyHeader');
       const fixedCompanyFilter = document.getElementById('companyFilter');
-      
+
       const fixedSystemHeader = document.getElementById('systemHeader');
       const fixedSystemFilter = document.getElementById('systemFilter');
-      
+
       /* get height of the filtersControl and header */
       const filterSectionHeight = document
-      .getElementById('table-controls-wrapper')
-      .getBoundingClientRect().height;
+        .getElementById('table-controls-wrapper')
+        .getBoundingClientRect().height;
       const fixedHeaderHeight = document.getElementById('companyHeader') && document.getElementById('companyHeader').getBoundingClientRect()
-      .height;
-      
+        .height;
+
       /* Map all the systems to set Heights for every cell */
       systems.map((system) => {
         /* get IDs of all available rows */
         const id = system.company.id;
         /* create IDs for cells */
-      const idCompany = `${id}company`;
-      // const idSystem = `${id}system`;
-      /* get <tds> */
-      const fixedCompany = document.getElementById(idCompany);
-      // const fixedSystem = document.getElementById(idSystem);
-      /* set left position for cells */
-      
-      fixedCompany.style.left = 0;
-      /* get elements of the header */
-      fixedCompanyHeader.style.left = 0;
-      fixedCompanyFilter.style.left = 0;
-      
-      /* set left position for system header */
-      const companyWidth = document.getElementById(`${id}company`).offsetWidth;
-      fixedSystemHeader.style.left = `${companyWidth}px`;
-      fixedSystemFilter.style.left = `${companyWidth}px`;
-      
-      return true;
-    });
-    
-    /* Fix when table is empty */
-    
-    /* set top position for header */
+        const idCompany = `${id}company`;
+        // const idSystem = `${id}system`;
+        /* get <tds> */
+        const fixedCompany = document.getElementById(idCompany);
+        // const fixedSystem = document.getElementById(idSystem);
+        /* set left position for cells */
+
+        fixedCompany.style.left = 0;
+        /* get elements of the header */
+        fixedCompanyHeader.style.left = 0;
+        fixedCompanyFilter.style.left = 0;
+
+        /* set left position for system header */
+        const companyWidth = document.getElementById(`${id}company`).offsetWidth;
+        fixedSystemHeader.style.left = `${companyWidth}px`;
+        fixedSystemFilter.style.left = `${companyWidth}px`;
+
+        return true;
+      });
+
+      /* Fix when table is empty */
+
+      /* set top position for header */
       fixedCompanyHeader.style.top = `${filterSectionHeight}px`;
       fixedSystemHeader.style.top = `${filterSectionHeight}px`;
-    
+
       fixedCompanyFilter.style.top = `${filterSectionHeight + fixedHeaderHeight + 3}px`;
       fixedSystemFilter.style.top = `${filterSectionHeight + fixedHeaderHeight + 3}px`;
     }
   }
-  
+
   /* FILTERS. Functions responsible for filtering data. */
-  
+
   getFilterSelection() {
     /* Function printing tags with selected filters. */
     return this.state.filters.map((item) => {
@@ -694,15 +694,15 @@ export default class TableContainer extends Component {
   }
 
   toggleShowStats() {
-    console.log(this.state.showStats)
-    this.setState({ showStats: !this.state.showStats })
+    console.log(this.state.showStats);
+    this.setState({ showStats: !this.state.showStats });
   }
 
   render() {
     if (!this.state.systemsCat) {
       return <p>Loading...</p>;
     }
-    
+
     return (
       <StyledTableContainer onScroll={() => this.addColumnShadow()}>
         <StyledControlsWrapper scroll={this.props.scroll} id="table-controls-wrapper">
@@ -721,24 +721,24 @@ export default class TableContainer extends Component {
           />
         </StyledControlsWrapper>
         {!this.state.showStats &&
-        <StyledTableWrapper id="table-container" scroll={this.props.scroll}>
-          <Table
-            dataf={this.state.systemsFixed}
-            data={this.state.systemsCat}
-            header={this.state.header}
-            filter={this.handleChange}
-            filtersValues={this.state.filtersValues}
-            sort={this.handleSorting}
-            sorting={this.state.sorting}
-            activeSorter={this.state.activeSorter}
-            fixedColumns={this.state.fixedColumns}
-            filtersHeight={this.state.filtersHeight}
-            fixedHeaderHeight={this.state.fixedHeaderHeight}
-            filteredCat={this.state.filteredCats}
-            refreshAfterFilterCat={this.refreshAfterFilterCat}
-            heights={this.state.heights}
+          <StyledTableWrapper id="table-container" scroll={this.props.scroll}>
+            <Table
+              dataf={this.state.systemsFixed}
+              data={this.state.systemsCat}
+              header={this.state.header}
+              filter={this.handleChange}
+              filtersValues={this.state.filtersValues}
+              sort={this.handleSorting}
+              sorting={this.state.sorting}
+              activeSorter={this.state.activeSorter}
+              fixedColumns={this.state.fixedColumns}
+              filtersHeight={this.state.filtersHeight}
+              fixedHeaderHeight={this.state.fixedHeaderHeight}
+              filteredCat={this.state.filteredCats}
+              refreshAfterFilterCat={this.refreshAfterFilterCat}
+              heights={this.state.heights}
             />
-        </StyledTableWrapper>}
+          </StyledTableWrapper>}
         {this.state.showStats && <span> some stats ...</span>}
       </StyledTableContainer>
     );
