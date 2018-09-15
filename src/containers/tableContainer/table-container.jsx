@@ -3,11 +3,13 @@ import PropTypes from 'prop-types';
 import { table } from '../../style_tokens/tokens';
 import data from '../../data/data.JSON';
 
+
 import {
   StyledTableContainer,
   StyledTableWrapper,
   StyledControlsWrapper,
 } from './table-container.styles';
+import StatsContainer from '../statsContainer/stats-container';
 import Table from '../../components/table/table';
 import FilterTag from '../../components/filterTag/filter-tag';
 import FilterTagSection from '../../components/filterTagSection/filter-tag-section';
@@ -713,7 +715,6 @@ export default class TableContainer extends Component {
           />
           <TableControls
             moveTable={this.moveTable}
-
             filterSearch={this.filterCategories}
             scrollerInactive={this.state.scrollerInactive}
             toggleShowStats={this.toggleShowStats}
@@ -739,7 +740,7 @@ export default class TableContainer extends Component {
               heights={this.state.heights}
             />
           </StyledTableWrapper>}
-        {this.state.showStats && <span> some stats ...</span>}
+        {this.state.showStats && <StatsContainer style={{ textAlign: 'center' }} />}
       </StyledTableContainer>
     );
   }

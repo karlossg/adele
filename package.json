@@ -42,10 +42,13 @@
     "immutability-helper": "^2.3.1",
     "lodash": "^4.17.4",
     "prop-types": "^15.5.10",
+    "ramda": "^0.25.0",
     "raw-loader": "^0.5.1",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
     "react-svg-inline": "^2.0.1",
+    "recharts": "^1.2.0",
+    "shortid": "^2.2.13",
     "styled-components": "^2.1.2",
     "svg-inline-loader": "^0.8.0",
     "webpack": "^3.5.5"
