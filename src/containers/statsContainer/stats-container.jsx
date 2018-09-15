@@ -1,13 +1,10 @@
 import React from 'react';
 import flatten from 'ramda/src/flatten';
 import shortid from 'shortid';
-// import PropTypes from 'prop-types';
-// import { table } from '../../style_tokens/tokens';
 import data from '../../data/data.JSON';
 import Stats from '../../components/stats/stats';
 
-import StyledStatsContainer from './stats-container';
-
+import StyledStatsContainer from './stats-container.styles';
 
 const generateData = (repoData, element) =>
   flatten(repoData
@@ -37,10 +34,7 @@ const statsDataArr = labels
 
 const StatsContainer = () => {
   return (
-    <StyledStatsContainer style={{
-      width: '1440px', marginTop: '10px', display: 'flex', flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'space-around',
-    }}
-    >
+    <StyledStatsContainer>
       {statsDataArr.map(el => (
         <Stats key={shortid.generate()} data={el.data} label={el.label} />
       ))}

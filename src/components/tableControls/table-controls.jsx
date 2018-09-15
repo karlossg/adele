@@ -4,6 +4,7 @@ import {
   StyledTableControlsWrapper,
   StyledMoveLabel,
   StyledSearchWrapper,
+  StyledTableControls,
 } from './table-controls.styles';
 
 import Input from '../input/input';
@@ -16,7 +17,7 @@ const TableControls = props => (
   <StyledTableControlsWrapper>
     <StatsLink action={props.toggleShowStats} label={generateStatsLinkLabel(props)} />
     {!props.showStats &&
-      <div>
+      <StyledTableControls>
         <StyledMoveLabel>Filter categories:</StyledMoveLabel>
         <StyledSearchWrapper>
           <Input
@@ -32,16 +33,16 @@ const TableControls = props => (
         </StyledSearchWrapper>
         <StyledMoveLabel>See More:</StyledMoveLabel>
         <ArrowButtonGroup action={props.moveTable} scrollerInactive={props.scrollerInactive} />
-      </div>}
+      </StyledTableControls>}
   </StyledTableControlsWrapper>
 );
 
 TableControls.propTypes = {
   moveTable: PropTypes.func.isRequired,
   filterSearch: PropTypes.func.isRequired,
-  scrollerInactive: PropTypes.oneOf(['left', 'right', '']).isRequired,
   toggleShowStats: PropTypes.func.isRequired,
   showStats: PropTypes.bool.isRequired,
+  scrollerInactive: PropTypes.oneOf(['left', 'right', '']).isRequired,
 };
 
 export { TableControls as default };

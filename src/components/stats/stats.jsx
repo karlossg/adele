@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { PieChart, Pie, Sector } from 'recharts';
 
-import StaledStats from './stats.styles';
+import { StyledStats, StyledHeader } from './stats.styles';
 
 const renderActiveShape = (props) => {
   const RADIAN = Math.PI / 180;
@@ -69,13 +69,14 @@ class Stats extends Component {
   render() {
     const { data, label } = this.props;
     return (
-      <StaledStats>
-        <h1>{label}</h1>
+      <StyledStats>
+        <StyledHeader>{label}</StyledHeader>
         <PieChart width={800} height={800}>
           <Pie
             activeIndex={this.state.activeIndex}
             activeShape={renderActiveShape}
             data={data}
+            dataKey="value"
             cx={300}
             cy={200}
             innerRadius={80}
@@ -84,7 +85,7 @@ class Stats extends Component {
             onMouseEnter={this.onPieEnter}
           />
         </PieChart>
-      </StaledStats>
+      </StyledStats>
     );
   }
 }

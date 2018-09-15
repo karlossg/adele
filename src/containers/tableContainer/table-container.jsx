@@ -24,6 +24,7 @@ export default class TableContainer extends Component {
       filtersValues: {},
       scrollerInactive: 'left',
       fixedColumns: ['company', 'system'],
+      showStats: false,
       /* Three states used for positioning
       ** of fixed header elements.
        */
@@ -69,7 +70,6 @@ export default class TableContainer extends Component {
       systemsCat: fixedData,
       systemsCatFixed: fixedData,
       activeSorter: '',
-      showStats: false,
     });
   }
 
@@ -696,7 +696,6 @@ export default class TableContainer extends Component {
   }
 
   toggleShowStats() {
-    console.log(this.state.showStats);
     this.setState({ showStats: !this.state.showStats });
   }
 
@@ -704,7 +703,6 @@ export default class TableContainer extends Component {
     if (!this.state.systemsCat) {
       return <p>Loading...</p>;
     }
-
     return (
       <StyledTableContainer onScroll={() => this.addColumnShadow()}>
         <StyledControlsWrapper scroll={this.props.scroll} id="table-controls-wrapper">
@@ -740,7 +738,7 @@ export default class TableContainer extends Component {
               heights={this.state.heights}
             />
           </StyledTableWrapper>}
-        {this.state.showStats && <StatsContainer style={{ textAlign: 'center' }} />}
+        {this.state.showStats && <StatsContainer />}
       </StyledTableContainer>
     );
   }

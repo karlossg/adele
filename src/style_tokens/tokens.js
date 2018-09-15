@@ -205,6 +205,15 @@ export const sectionHeader = {
   },
 };
 
+export const statsHeader = {
+  typography: {
+    fontFamily: typography.fontFamily,
+    size: typography.regularText,
+    weight: typography.regular,
+    color: tokens.colors.grayLight10,
+  },
+};
+
 export const uxpinPromo = {
   typography: {
     fontFamily: typography.fontFamily,

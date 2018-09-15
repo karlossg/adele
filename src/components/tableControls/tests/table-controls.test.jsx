@@ -11,6 +11,8 @@ it('renders table controls correctly', () => {
     filterSearch={mockFunc}
     updateData={mockFunc}
     scrollerInactive="left"
+    showStats={false}
+    toggleShowStats={mockFunc}
   />);
   expect(wrapper).toMatchSnapshot();
 });

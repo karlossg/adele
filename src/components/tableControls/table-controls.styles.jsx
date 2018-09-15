@@ -6,11 +6,16 @@ const StyledTableControlsWrapper = styled.div`
   justify-content: flex-end;
   align-items: center;
   position: relative;
-  min-width: 800px;
+  min-width: 1400px;
+`;
+
+const StyledTableControls = styled.div`
+  display: inherit;
 `;
 
 const StyledMoveLabel = styled.span`
   display: block;
+  padding-top: 5px;
 
   &:first-of-type {
     width: 110px;
@@ -29,4 +34,4 @@ const StyledSearchWrapper = styled.div`
   width: 200px;
 `;
 
-export { StyledTableControlsWrapper, StyledMoveLabel, StyledSearchWrapper };
+export { StyledTableControlsWrapper, StyledMoveLabel, StyledSearchWrapper, StyledTableControls };

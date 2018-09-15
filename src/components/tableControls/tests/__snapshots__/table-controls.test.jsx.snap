@@ -15,30 +15,35 @@ exports[`renders table controls correctly 1`] = `
   -ms-flex-align: center;
   align-items: center;
   position: relative;
-  min-width: 800px;
+  min-width: 1400px;
 }
 
 .c2 {
+  display: inherit;
+}
+
+.c3 {
   display: block;
+  padding-top: 5px;
   font-family: proxima-nova,Proxima Nova,Helvetica Neue,Helvetica,Arial,sans-serif;
   font-size: 14px;
   color: #323335;
   font-weight: 300;
 }
 
-.c2:first-of-type {
+.c3:first-of-type {
   width: 110px;
 }
 
-.c2:last-of-type {
+.c3:last-of-type {
   width: 70px;
 }
 
-.c3 {
+.c4 {
   width: 200px;
 }
 
-.c4 {
+.c5 {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -58,15 +63,15 @@ exports[`renders table controls correctly 1`] = `
   line-height: 28px;
 }
 
-.c4[type='search'] {
+.c5[type='search'] {
   border-color: #c5c5c5;
 }
 
-.c4::-webkit-search-decoration {
+.c5::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
-.c4::-webkit-search-cancel-button {
+.c5::-webkit-search-cancel-button {
   -webkit-appearance: none;
   width: 11px;
   height: 11px;
@@ -74,48 +79,34 @@ exports[`renders table controls correctly 1`] = `
   background-size: contain;
 }
 
-.c4::-webkit-input-placeholder {
+.c5::-webkit-input-placeholder {
   text-align: left;
   font-style: italic;
 }
 
-.c4::-moz-placeholder {
+.c5::-moz-placeholder {
   text-align: left;
   font-style: italic;
 }
 
-.c4:-ms-input-placeholder {
+.c5:-ms-input-placeholder {
   text-align: left;
   font-style: italic;
 }
 
-.c4::placeholder {
+.c5::placeholder {
   text-align: left;
   font-style: italic;
 }
 
-.c4::-webkit-input-placeholder {
+.c5::-webkit-input-placeholder {
   text-align: left;
   font-style: italic;
   width: 100%;
 }
 
-.c4:focus {
+.c5:focus {
   border: 1px solid #006cff;
-}
-
-.c7:focus {
-  outline: 0;
-}
-
-.c7 > svg {
-  width: 13px;
-  height: 100%;
-  fill: #777777;
-  -webkit-transform: rotate(90deg);
-  -ms-transform: rotate(90deg);
-  transform: rotate(90deg);
-  cursor: pointer;
 }
 
 .c8:focus {
@@ -125,6 +116,20 @@ exports[`renders table controls correctly 1`] = `
 .c8 > svg {
   width: 13px;
   height: 100%;
+  fill: #777777;
+  -webkit-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  transform: rotate(90deg);
+  cursor: pointer;
+}
+
+.c9:focus {
+  outline: 0;
+}
+
+.c9 > svg {
+  width: 13px;
+  height: 100%;
   fill: #444;
   -webkit-transform: rotate(270deg);
   -ms-transform: rotate(270deg);
@@ -132,11 +137,11 @@ exports[`renders table controls correctly 1`] = `
   cursor: pointer;
 }
 
-.c8 > svg:hover {
+.c9 > svg:hover {
   fill: #006cff;
 }
 
-.c6 {
+.c7 {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -146,11 +151,11 @@ exports[`renders table controls correctly 1`] = `
   padding: 0;
 }
 
-.c6:focus > span > svg {
+.c7:focus > span > svg {
   fill: #006cff;
 }
 
-.c5 {
+.c6 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -189,6 +194,8 @@ exports[`renders table controls correctly 1`] = `
   filterSearch={[Function]}
   moveTable={[Function]}
   scrollerInactive="left"
+  showStats={false}
+  toggleShowStats={[Function]}
   updateData={[Function]}
 >
   <styled.div>
@@ -196,217 +203,226 @@ exports[`renders table controls correctly 1`] = `
       className="c0"
     >
       <StatsLink
+        action={[Function]}
         label="Show usage stats >>"
         tab={0}
       >
         <styled.button
+          onClick={[Function]}
           tabIndex={0}
         >
           <button
             className="c1"
+            onClick={[Function]}
             tabIndex={0}
           >
             Show usage stats &gt;&gt;
           </button>
         </styled.button>
       </StatsLink>
-      <styled.span>
-        <span
-          className="c2"
-        >
-          Filter categories:
-        </span>
-      </styled.span>
       <styled.div>
         <div
-          className="c3"
-        >
-          <Input
-            action={[Function]}
-            autoComplete="off"
-            color="light"
-            controlled={false}
-            id=""
-            name="search"
-            placeholder="Type to filter..."
-            tab={1}
-            type="search"
-          >
-            <styled.input
-              autoComplete="off"
-              color="light"
-              id=""
-              name="search"
-              onChange={[Function]}
-              placeholder="Type to filter..."
-              tabIndex={1}
-              type="search"
-            >
-              <input
-                autoComplete="off"
-                className="c4"
-                color="light"
-                id=""
-                name="search"
-                onChange={[Function]}
-                placeholder="Type to filter..."
-                tabIndex={1}
-                type="search"
-              />
-            </styled.input>
-          </Input>
-        </div>
-      </styled.div>
-      <styled.span>
-        <span
           className="c2"
         >
-          See More:
-        </span>
-      </styled.span>
-      <ArrowButtonGroup
-        action={[Function]}
-        scrollerInactive="left"
-      >
-        <styled.div>
-          <div
-            className="c5"
-          >
-            <ArrowButton
-              action={[Function]}
-              direction="left"
-              scrollerInactive="left"
+          <styled.span>
+            <span
+              className="c3"
             >
-              <styled.button
-                direction="left"
-                onClick={[Function]}
-                tabIndex={1}
-                title="Move Table to the left"
+              Filter categories:
+            </span>
+          </styled.span>
+          <styled.div>
+            <div
+              className="c4"
+            >
+              <Input
+                action={[Function]}
+                autoComplete="off"
+                color="light"
+                controlled={false}
+                id=""
+                name="search"
+                placeholder="Type to filter..."
+                tab={1}
+                type="search"
               >
-                <button
-                  className="c6"
-                  direction="left"
-                  onClick={[Function]}
+                <styled.input
+                  autoComplete="off"
+                  color="light"
+                  id=""
+                  name="search"
+                  onChange={[Function]}
+                  placeholder="Type to filter..."
                   tabIndex={1}
-                  title="Move Table to the left"
+                  type="search"
                 >
-                  <Icon
-                    active={false}
-                    color="#444"
-                    i="test-file-stub"
-                    in="blue"
-                    rotate={90}
-                    size="s"
+                  <input
+                    autoComplete="off"
+                    className="c5"
+                    color="light"
+                    id=""
+                    name="search"
+                    onChange={[Function]}
+                    placeholder="Type to filter..."
+                    tabIndex={1}
+                    type="search"
+                  />
+                </styled.input>
+              </Input>
+            </div>
+          </styled.div>
+          <styled.span>
+            <span
+              className="c3"
+            >
+              See More:
+            </span>
+          </styled.span>
+          <ArrowButtonGroup
+            action={[Function]}
+            scrollerInactive="left"
+          >
+            <styled.div>
+              <div
+                className="c6"
+              >
+                <ArrowButton
+                  action={[Function]}
+                  direction="left"
+                  scrollerInactive="left"
+                >
+                  <styled.button
+                    direction="left"
+                    onClick={[Function]}
+                    tabIndex={1}
+                    title="Move Table to the left"
                   >
-                    <Styled(SVGInline)
-                      color="#444"
-                      data-active={false}
-                      in="blue"
-                      rotate={90}
-                      size="s"
-                      svg="test-file-stub"
+                    <button
+                      className="c7"
+                      direction="left"
+                      onClick={[Function]}
+                      tabIndex={1}
+                      title="Move Table to the left"
                     >
-                      <SVGInline
-                        className="c7"
-                        classSuffix="-svg"
-                        cleanup={Array []}
-                        cleanupExceptions={Array []}
+                      <Icon
+                        active={false}
                         color="#444"
-                        component="span"
-                        data-active={false}
+                        i="test-file-stub"
                         in="blue"
                         rotate={90}
                         size="s"
-                        svg="test-file-stub"
                       >
-                        <span
-                          className="SVGInline c7"
+                        <Styled(SVGInline)
                           color="#444"
-                          dangerouslySetInnerHTML={
-                            Object {
-                              "__html": "test-file-stub",
-                            }
-                          }
                           data-active={false}
                           in="blue"
                           rotate={90}
                           size="s"
-                        />
-                      </SVGInline>
-                    </Styled(SVGInline)>
-                  </Icon>
-                </button>
-              </styled.button>
-            </ArrowButton>
-            <ArrowButton
-              action={[Function]}
-              direction="right"
-              scrollerInactive="left"
-            >
-              <styled.button
-                direction="right"
-                onClick={[Function]}
-                tabIndex={1}
-                title="Move Table to the right"
-              >
-                <button
-                  className="c6"
+                          svg="test-file-stub"
+                        >
+                          <SVGInline
+                            className="c8"
+                            classSuffix="-svg"
+                            cleanup={Array []}
+                            cleanupExceptions={Array []}
+                            color="#444"
+                            component="span"
+                            data-active={false}
+                            in="blue"
+                            rotate={90}
+                            size="s"
+                            svg="test-file-stub"
+                          >
+                            <span
+                              className="SVGInline c8"
+                              color="#444"
+                              dangerouslySetInnerHTML={
+                                Object {
+                                  "__html": "test-file-stub",
+                                }
+                              }
+                              data-active={false}
+                              in="blue"
+                              rotate={90}
+                              size="s"
+                            />
+                          </SVGInline>
+                        </Styled(SVGInline)>
+                      </Icon>
+                    </button>
+                  </styled.button>
+                </ArrowButton>
+                <ArrowButton
+                  action={[Function]}
                   direction="right"
-                  onClick={[Function]}
-                  tabIndex={1}
-                  title="Move Table to the right"
+                  scrollerInactive="left"
                 >
-                  <Icon
-                    active={true}
-                    color="#444"
-                    i="test-file-stub"
-                    in="blue"
-                    rotate={270}
-                    size="s"
+                  <styled.button
+                    direction="right"
+                    onClick={[Function]}
+                    tabIndex={1}
+                    title="Move Table to the right"
                   >
-                    <Styled(SVGInline)
-                      color="#444"
-                      data-active={true}
-                      in="blue"
-                      rotate={270}
-                      size="s"
-                      svg="test-file-stub"
+                    <button
+                      className="c7"
+                      direction="right"
+                      onClick={[Function]}
+                      tabIndex={1}
+                      title="Move Table to the right"
                     >
-                      <SVGInline
-                        className="c8"
-                        classSuffix="-svg"
-                        cleanup={Array []}
-                        cleanupExceptions={Array []}
+                      <Icon
+                        active={true}
                         color="#444"
-                        component="span"
-                        data-active={true}
+                        i="test-file-stub"
                         in="blue"
                         rotate={270}
                         size="s"
-                        svg="test-file-stub"
                       >
-                        <span
-                          className="SVGInline c8"
+                        <Styled(SVGInline)
                           color="#444"
-                          dangerouslySetInnerHTML={
-                            Object {
-                              "__html": "test-file-stub",
-                            }
-                          }
                           data-active={true}
                           in="blue"
                           rotate={270}
                           size="s"
-                        />
-                      </SVGInline>
-                    </Styled(SVGInline)>
-                  </Icon>
-                </button>
-              </styled.button>
-            </ArrowButton>
-          </div>
-        </styled.div>
-      </ArrowButtonGroup>
+                          svg="test-file-stub"
+                        >
+                          <SVGInline
+                            className="c9"
+                            classSuffix="-svg"
+                            cleanup={Array []}
+                            cleanupExceptions={Array []}
+                            color="#444"
+                            component="span"
+                            data-active={true}
+                            in="blue"
+                            rotate={270}
+                            size="s"
+                            svg="test-file-stub"
+                          >
+                            <span
+                              className="SVGInline c9"
+                              color="#444"
+                              dangerouslySetInnerHTML={
+                                Object {
+                                  "__html": "test-file-stub",
+                                }
+                              }
+                              data-active={true}
+                              in="blue"
+                              rotate={270}
+                              size="s"
+                            />
+                          </SVGInline>
+                        </Styled(SVGInline)>
+                      </Icon>
+                    </button>
+                  </styled.button>
+                </ArrowButton>
+              </div>
+            </styled.div>
+          </ArrowButtonGroup>
+        </div>
+      </styled.div>
     </div>
   </styled.div>
 </TableControls>
