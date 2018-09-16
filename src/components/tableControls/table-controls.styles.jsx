@@ -6,7 +6,7 @@ const StyledTableControlsWrapper = styled.div`
   justify-content: flex-end;
   align-items: center;
   position: relative;
-  min-width: 1400px;
+  width: 1400px;
 `;
 
 const StyledTableControls = styled.div`
